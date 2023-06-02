@@ -4,14 +4,14 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
+
 
 @Data
 @Entity
-@Table(name = "order")
-public class Order {
+@Table(name = "donhang")
+public class Donhang {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,7 +22,7 @@ public class Order {
     @Column(name = "amount")
     private Double amount;
 
-    @Column(name = "condition")
+    @Column(name = "condition_dh")
     private String condition;
 
 
@@ -34,7 +34,7 @@ public class Order {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    @OneToMany(mappedBy = "order")
-    private Set<OrderDetails> orderDetails;
+    @OneToMany(mappedBy = "donhang", fetch = FetchType.LAZY)
+    private List<OrderDetails> orderDetails;
 
 }

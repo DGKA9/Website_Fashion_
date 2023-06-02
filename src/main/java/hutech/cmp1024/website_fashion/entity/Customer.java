@@ -8,6 +8,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "customer")
+
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,5 +34,6 @@ public class Customer {
     private Role role;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-    private List<Order> order;
+    private List<Donhang> order;
+
 }
