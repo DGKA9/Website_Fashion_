@@ -12,8 +12,9 @@ public class OrderDetails {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "order_id")
-    private Order order;
+    @JoinColumn(name = "orders_id")
+    private Donhang donhang;
+
 
     @ManyToOne
     @JoinColumn(name = "product_id")

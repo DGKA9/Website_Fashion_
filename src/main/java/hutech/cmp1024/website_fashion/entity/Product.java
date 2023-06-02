@@ -34,7 +34,17 @@ public class Product {
     @JoinColumn(name = "supplier_id")
     private Supplier supplier;
 
-    @OneToMany(mappedBy = "product")
+//    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+//    @JoinTable(name = "product_order",
+//            joinColumns = {
+//                    @JoinColumn(name = "product_id", referencedColumnName = "id",
+//                            nullable = false, updatable = false)},
+//            inverseJoinColumns = {
+//                    @JoinColumn(name = "donhang_id", referencedColumnName = "id",
+//                            nullable = false, updatable = false)})
+//    private Set<Donhang> donhang = new HashSet<>();
+
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     private Set<OrderDetails> orderDetails;
 
     @ManyToOne

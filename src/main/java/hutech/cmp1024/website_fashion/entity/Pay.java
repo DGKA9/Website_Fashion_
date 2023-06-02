@@ -17,6 +17,6 @@ public class Pay {
     @Column(name = "payname")
     private String payName;
 
-    @OneToMany(mappedBy = "pay", cascade = CascadeType.ALL)
-    private List<Order> orders;
+    @OneToMany(mappedBy = "pay", fetch = FetchType.LAZY)
+    private List<Donhang> donhang;
 }
