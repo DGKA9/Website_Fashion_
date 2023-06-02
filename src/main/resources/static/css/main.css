@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Roboto:wght@300;400;500;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+main {
+    position: relative;
+    width: calc(min(90rem, 90%));
+    margin: 0 auto;
+    min-height: 100vh;
+    column-gap: 3rem;
+    padding-block: min(20vh, 3rem);
+}
+
+.bg {
+    position: fixed;
+    top: -4rem;
+    left: -12rem;
+    z-index: -1;
+    opacity: 0;
+}
+
+.bg2 {
+    position: fixed;
+    bottom: -2rem;
+    right: -3rem;
+    z-index: -1;
+    width: 9.375rem;
+    opacity: 0;
+}
+
+main > div span {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1rem;
+    color: #717171;
+}
+
+main > div h1 {
+    text-transform: capitalize;
+    letter-spacing: 0.8px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-size: clamp(3.4375rem, 3.25rem + 0.75vw, 4rem);
+    background-color: #005baa;
+    background-image: linear-gradient(45deg, #005baa, #000000);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+main > div hr {
+    display: block;
+    background: #005baa;
+    height: 0.25rem;
+    width: 6.25rem;
+    border: none;
+    margin: 1.125rem 0 1.875rem 0;
+}
+
+main > div p {
+    line-height: 1.6;
+}
+
+main a {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #717171;
+    font-weight: 500;
+    background: #fff;
+    border-radius: 3.125rem;
+    transition: 0.3s ease-in-out;
+}
+
+main > div > a {
+    border: 2px solid #c2c2c2;
+    margin-top: 2.188rem;
+    padding: 0.625rem 1.875rem;
+}
+
+main > div > a:hover {
+    border: 0.125rem solid #005baa;
+    color: #005baa;
+}
+
+
+@media screen and (min-width: 93.75rem) {
+    .swiper {
+        width: 85%;
+    }
+}

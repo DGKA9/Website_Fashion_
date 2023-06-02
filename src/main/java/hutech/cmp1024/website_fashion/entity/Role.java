@@ -17,7 +17,7 @@ public class Role {
     @Column(name = "roleName")
     private String roleName;
 
-    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
-    private List<Customer> customers;
+//    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
+//    private List<Customer> customers;
 
 }
