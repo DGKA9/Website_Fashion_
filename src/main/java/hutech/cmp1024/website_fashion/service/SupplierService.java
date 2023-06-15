@@ -36,7 +36,7 @@ public class SupplierService {
 
     public Supplier detailsSupplier(Long id) {
         Optional<Supplier> supplier = supplierRepo.findById(id);
-        if(!supplier.isPresent())
+        if(supplier.isEmpty())
         {
             throw new EntityNotFoundException("Không tìm thấy Nhà cung cấp có id là: !"+id);
         }

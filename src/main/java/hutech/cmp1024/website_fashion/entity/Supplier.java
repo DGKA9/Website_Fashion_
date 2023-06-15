@@ -25,7 +25,7 @@ public class Supplier {
     @Column(name = "address")
     private String address;
 
-//
-//    @OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL)
-//    private List<Product> products;
+
+    @OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL)
+    private List<Product> products;
 }

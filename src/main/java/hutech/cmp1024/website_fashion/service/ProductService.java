@@ -36,7 +36,7 @@ public class ProductService {
 
     public Product detailsProduct(Long id) {
         Optional<Product> product = productRepo.findById(id);
-        if(!product.isPresent())
+        if(product.isEmpty())
         {
             throw new EntityNotFoundException("Không tìm thấy sản phẩm có id là: !" + id);
         }
