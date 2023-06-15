@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Shop Fashion</title>
@@ -31,22 +30,8 @@
                     </li>
                 </ul>
 
-<!--                <li sec:authorize="isAuthenticated()">-->
-<!--                    <form th:action="@{/logout}" method="post">-->
-<!--                        <button class="btn btn-outline-danger" style="margin: 3px;" type="submit">Logout</button>-->
-<!--                    </form>-->
-<!--                </li>-->
-<!--                <li sec:authorize="!isAuthenticated()">-->
-<!--                    <a class="btn btn-outline-primary" style="margin: 3px;" href="/login">Login</a>-->
-<!--                </li>-->
-
                 <ul class="nav justify-content-center header_top_ul">
-                    <li class="nav-item" sec:authorize="isAuthenticated()">
-                     <form th:action="@{/logout}" method="post">
-                    <button class="btn btn-outline-danger" style="margin: 3px;" type="submit">Logout</button>
-                    </form>
-                    </li>
-                    <li class="nav-item" sec:authorize="!isAuthenticated()">
+                    <li class="nav-item">
                         <a class="nav-link active header_top_a" aria-current="page" href="/login">
                             <span>Sign In</span>
                             <i class="ti ti-heartbeat"></i>
