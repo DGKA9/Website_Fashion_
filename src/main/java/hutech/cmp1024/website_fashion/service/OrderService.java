@@ -1,6 +1,6 @@
 package hutech.cmp1024.website_fashion.service;
 
-import hutech.cmp1024.website_fashion.entity.Order;
+import hutech.cmp1024.website_fashion.entity.Donhang;
 import hutech.cmp1024.website_fashion.repository.IOrderRepo;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,19 +15,19 @@ public class OrderService {
     @Autowired
     private IOrderRepo orderRepo;
 
-    public List<Order> getAllOrder(){
+    public List<Donhang> getAllOrder(){
         return orderRepo.findAll();
     }
 
-    public Order getOrderById(Long id) {
+    public Donhang getOrderById(Long id) {
         return orderRepo.findById(id).orElse(null);
     }
 
-    public void addOrder(Order order) {
+    public void addOrder(Donhang order) {
         orderRepo.save(order);
     }
 
-    public void updateOrder(Order order) {
+    public void updateOrder(Donhang order) {
         orderRepo.save(order);
     }
 
@@ -35,9 +35,9 @@ public class OrderService {
         orderRepo.deleteById(id);
     }
 
-    public Order detailsOrder(Long id) {
-        Optional<Order> order = orderRepo.findById(id);
-        if(!order.isPresent())
+    public Donhang detailsOrder(Long id) {
+        Optional<Donhang> order = orderRepo.findById(id);
+        if(order.isEmpty())
         {
             throw new EntityNotFoundException("Không tìm thấy!");
         }

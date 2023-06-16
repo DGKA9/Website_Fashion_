@@ -10,31 +10,152 @@
          <th:block th:replace="layout :: header"></th:block>
      </div>
 
+     <div>
+         <picture>
+             <source srcset="https://media.gucci.com/content/HeroRegularStandard_1600x675/1683135029/HeroRegularStandard_Summer-stories-2023-02_001_Default.jpg" type="image/svg+xml">
+             <img src="https://media.gucci.com/content/HeroRegularStandard_1600x675/1683135029/HeroRegularStandard_Summer-stories-2023-02_001_Default.jpg" class="img-fluid img-thumbnails" alt="...">
+         </picture>
+         <div class="giant-look-content-block-2">
+             <h1 class="hero-title-3">Gucci Summer Stories</h1>
+         </div>
+     </div>
+
     <div class="container">
-        <div style="padding: 8px 0; display: flex; justify-content: flex-end">
-            <a th:href="@{/category/add}" class="btn btn-primary active" >Create</a>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+                <div class="card h-100 card-wrapper">
+                    <img src="https://cdn.shopify.com/s/files/1/0293/9277/files/04-22-23Studio7_KF_DJ_08-58-23_13_4MTV86330NV_MultiColor_1630_ES_360x.jpg?v=1682606816" class="card-img-top card-wrapper" alt="...">
+                    <button class="card_add">
+                        Quick Add
+                    </button>
+                    <div class="card-body">
+                        <div class="card-title">
+                            <a href="/" class="card_color">
+                                XXXTentacion In My Thoughts Short Sleeve Tee - Black
+                            </a>
+                        </div>
+                        <div class="card_price">
+                            <span>€19,95</span>
+                        </div>
+                        <div class="card-promotion">
+                            <span>One Day Only! 40% OFF GRAPHICS! No Code Needed.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 card-wrapper">
+                    <img src="https://cdn.shopify.com/s/files/1/0293/9277/products/01-31-23Studio5_DM_RD_15-45-38_76_2XC01731_Black_16647_MP_360x.jpg?v=1675885498" class="card-img-top" alt="...">
+                    <button class="card_add">
+                        Quick Add
+                    </button>
+                    <div class="card-body">
+                        <div class="card-title">
+                            <a href="/" class="card_color">
+                                XXXTentacion In My Thoughts Short Sleeve Tee - Black
+                            </a>
+                        </div>
+                        <div class="card_price">
+                            <span>€19,95</span>
+                        </div>
+                        <div class="card-promotion">
+                            <span>One Day Only! 40% OFF GRAPHICS! No Code Needed.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 card-wrapper">
+                    <img src="https://cdn.shopify.com/s/files/1/0293/9277/files/05-02-23Studio6_TA_DJ_11-17-28_36_4WTN92300NV_Sand_P_0424_MP_360x.jpg?v=1683588247" class="card-img-top" alt="...">
+                    <button class="card_add">
+                        Quick Add
+                    </button>
+                    <div class="card-body">
+                        <div class="card-title">
+                            <a href="/" class="card_color">
+                                XXXTentacion In My Thoughts Short Sleeve Tee - Black
+                            </a>
+                        </div>
+                        <div class="card_price">
+                            <span>€19,95</span>
+                        </div>
+                        <div class="card-promotion">
+                            <span>One Day Only! 40% OFF GRAPHICS! No Code Needed.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 card-wrapper">
+                    <img src="https://cdn.shopify.com/s/files/1/0293/9277/products/11-28-22Studio5_RT_DJ_13-21-46_71_WC12136_Black_2641_WG_360x.jpg?v=1669746124" class="card-img-top" alt="...">
+                        <button class="card_add">
+                            Quick Add
+                        </button>
+                    <div class="card-body">
+                        <div class="card-title">
+                            <a href="/" class="card_color">
+                                XXXTentacion In My Thoughts Short Sleeve Tee - Black
+                            </a>
+                        </div>
+                        <div class="card_price">
+                            <span>€19,95</span>
+                        </div>
+                        <div class="card-promotion">
+                            <span>One Day Only! 40% OFF GRAPHICS! No Code Needed.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 card-wrapper">
+                    <img src="https://cdn.shopify.com/s/files/1/0293/9277/products/11-15-22Studio5_RT_DJ_09-41-31_28_37891026_Black_0023_SG_360x.jpg?v=1668621524" class="card-img-top" alt="...">
+                    <button class="card_add">
+                        Quick Add
+                    </button>
+                    <div class="card-body">
+                        <div class="card-title" >
+                            <a href="/" class="card_color">
+                                XXXTentacion In My Thoughts Short Sleeve Tee - Black
+                            </a>
+                        </div>
+                        <div class="card_price">
+                            <span>€19,95</span>
+                        </div>
+                        <div class="card-promotion">
+                            <span>One Day Only! 40% OFF GRAPHICS! No Code Needed.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <table class="table table-dark table-hover">
-            <tr>
-                <th>id</th>
-                <th>Tên Loại</th>
-                <th>Chức Năng</th>
-            </tr>
-            <tr th:each="categoryItem : ${category}">
-                <td th:text="${categoryItem.id}"></td>
-                <td th:text="${categoryItem.categoryName}"></td>
-                <td>
-                    <a th:href="@{/category/edit/{id}(id=${categoryItem.id})}" class="btn btn-outline-success">Edit</a>
-                    <a th:href="@{/category/delete/{id}(id=${categoryItem.id})}"
-                       onclick="return confirm('Are you sure?')"
-                       class="btn btn-outline-danger"
-                    >
-                       Delete
-                    </a>
-                </td>
-            </tr>
-        </table>
+
     </div>
+<!--    <div class="container">-->
+<!--        <div style="padding: 8px 0; display: flex; justify-content: flex-end">-->
+<!--            <a th:href="@{/category/add}" class="btn btn-primary active" >Create</a>-->
+<!--        </div>-->
+<!--        <table class="table table-dark table-hover">-->
+<!--            <tr>-->
+<!--                <th>id</th>-->
+<!--                <th>Tên Loại</th>-->
+<!--                <th>Chức Năng</th>-->
+<!--            </tr>-->
+<!--            <tr th:each="categoryItem : ${category}">-->
+<!--                <td th:text="${categoryItem.id}"></td>-->
+<!--                <td th:text="${categoryItem.categoryName}"></td>-->
+<!--                <td>-->
+<!--                    <a th:href="@{/category/edit/{id}(id=${categoryItem.id})}" class="btn btn-outline-success">Edit</a>-->
+<!--                    <a th:href="@{/category/delete/{id}(id=${categoryItem.id})}"-->
+<!--                       onclick="return confirm('Are you sure?')"-->
+<!--                       class="btn btn-outline-danger"-->
+<!--                    >-->
+<!--                       Delete-->
+<!--                    </a>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--        </table>-->
+<!--    </div>-->
 
     <th:block th:replace="layout :: footer"></th:block>
 </body>

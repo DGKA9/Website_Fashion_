@@ -8,12 +8,143 @@
 <body>
 <th:block th:replace="layout :: header"></th:block>
 
-    <div class="container wrapperList">
-        <nav class="navbar" >
-            <h1>Home</h1>
+    <div class="wrapper wrapperList">
+        <nav class="navbar navbar-carousel" >
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner carousel-inner-1">
+                    <div class="carousel-item active" data-bs-interval="6000">
+                        <img src="https://media.gucci.com/content/HeroBigStandard_1600x760/1684764918/HeroBigStandard_Summer-stories-2023-13_001_Default.jpg" class="d-block w-100 object-fit-scale" alt="...">
+                        <div class="carousel-caption carousel-caption-1 d-none d-md-block carousel-caption-slide">
+                            <h1 class="hero-title">
+                                <span class="eyebrow"></span>
+                                <span>Gucci Summer Stories</span>
+                            </h1>
+                            <a href="/products" class="shop-the-collection">
+                                <span class="btn_shopNow">SHOP NOW</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="https://media.gucci.com/content/HeroBigStandard_1600x760/1685638168/HeroBigStandard_MLB-June23-010_001_Default.jpg" class="d-block w-100 object-fit-scale" alt="...">
+                        <div class="carousel-caption carousel-caption-1 d-none d-md-block">
+                            <h1 class="hero-title">Father's Day</h1>
+                            <a href="/products" class="shop-the-collection">
+                                <span class="btn_shopNow">SHOP NOW</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://media.gucci.com/content/HeroBigStandard_1600x760/1685625716/HeroBigStandard_Summer-Stories-June6-sandals_001_Default.jpg" class="d-block w-100 object-fit-scale  " alt="...">
+                        <div class="carousel-caption carousel-caption-1 d-none d-md-block">
+                            <h1 class="hero-title">Women's Sandals</h1>
+                            <a href="/products" class="shop-the-collection">
+                                <span class="btn_shopNow">SHOP NOW</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://media.gucci.com/content/HeroBigStandard_1600x760/1685615407/HeroBigStandard_FDAY-June6-def_001_Default.jpg" class="d-block w-100 object-fit-scale  " alt="...">
+                        <div class="carousel-caption carousel-caption-1 d-none d-md-block">
+                            <h1 class="hero-title">MLB™ for Gucci</h1>
+                            <a href="/products" class="shop-the-collection">
+                                <span class="btn_shopNow">SHOP NOW</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </nav>
+
+        <nav class="navbar navbar-carousel navbar-carousel-2" >
+            <div id="carouselExampleIndicators" class="carousel slide carousel_2" data-bs-ride="carousel">
+                <div class="carousel-inner carousel-inner-2">
+                    <div class="carousel-item active" data-bs-interval="1000">
+                        <img src="https://media.gucci.com/style/Transparent_Center_0_0_730x490/1679937409/745718_FABYY_9744_001_098_0000_Light.png" class="d-block w-100 object-fit-contain " alt="...">
+                        <div class="carousel-caption carousel-caption-2 d-none d-md-block carousel-caption-slide">
+                            <h1 class="hero-title-2">
+                                <span>Gucci Summer Stories</span>
+                            </h1>
+                            <a href="/products" class="shop-the-collection-2">
+                                <span class="btn_shopNow">SHOP NOW</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="https://media.gucci.com/style/Transparent_Center_0_0_730x490/1675273568/696009_AABY7_2801_001_071_0025_Light.png" class="d-block w-100 object-fit-contain " alt="...">
+                        <div class="carousel-caption carousel-caption-2 d-none d-md-block">
+                            <h1 class="hero-title-2">Father's Day</h1>
+                            <a href="/products" class="shop-the-collection-2">
+                                <span class="btn_shopNow">SHOP NOW</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://media.gucci.com/style/Transparent_Center_0_0_730x490/1681488941/752597_FACFW_8920_001_077_0000_Light.png" class="d-block w-100 object-fit-contain " alt="...">
+                        <div class="carousel-caption carousel-caption-2 d-none d-md-block">
+                            <h1 class="hero-title-2">Women's Sandals</h1>
+                            <a href="/products" class="shop-the-collection-2">
+                                <span class="btn_shopNow">SHOP NOW</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="btn-action-1">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon icon-background" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                </div>
+                <div class="btn-action-2">
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon icon-background" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="img-block">
+            <picture>
+                <source srcset="https://media.gucci.com/content/GiantEditorialStandard_1366x1643/1686649505/GiantEditorialStandard_Summer-Stories-June13-01_001_Default.jpg" type="image/svg+xml">
+                <img src="https://media.gucci.com/content/GiantEditorialStandard_1366x1643/1686649505/GiantEditorialStandard_Summer-Stories-June13-01_001_Default.jpg" class="img-fluid img-thumbnail" alt="...">
+            </picture>
+            <div class="giant-look-content-block">
+                <h2 class="hero-title-1">Gucci Summer Stories</h2>
+                <div class="shop-this">
+                    <a href="/products" class="shop-the-collection-3">
+                        <span class="btn_shopNow">SHOP NOW</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="img-block">
+            <picture>
+                <source srcset="https://media.gucci.com/content/HomepageVideoBackgroundStandard_1300x758/1686329106/HomepageVideoBackgroundStandard_Summer-Stories-june12_001_Default.jpg" type="image/svg+xml">
+                <img src="https://media.gucci.com/content/HomepageVideoBackgroundStandard_1300x758/1686329106/HomepageVideoBackgroundStandard_Summer-Stories-june12_001_Default.jpg" class="img-fluid img-thumbnail" alt="...">
+            </picture>
+            <div class="giant-look-content-block">
+                <h2 class="hero-title-1">Gucci Summer Stories</h2>
+                <div class="shop-this">
+                    <a href="/products" class="shop-the-collection-3">
+                        <span class="btn_shopNow">SHOP NOW</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
 <th:block th:replace="layout :: footer"></th:block>
+
 </body>
 </html>
