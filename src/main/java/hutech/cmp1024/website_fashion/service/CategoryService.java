@@ -36,7 +36,7 @@ public class CategoryService {
 
     public Category detailsCategory(Long id) {
         Optional<Category> category = categoryRepo.findById(id);
-        if(!category.isPresent())
+        if(category.isEmpty())
         {
             throw new EntityNotFoundException("Không tìm thấy loại có id là: " + id);
         }

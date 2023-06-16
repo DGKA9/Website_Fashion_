@@ -3,42 +3,328 @@
 <head>
     <meta charset="UTF-8">
     <title>Shop Fashion</title>
+    <link th:fragment="link-css" rel="stylesheet" th:href="@{/css/main.css}">
+    <link th:fragment="link-css" rel="stylesheet" th:href="@{/css/base.css}">
     <link th:fragment="link-css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
-</head>
+    <link th:fragment="link-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <body>
-    <header th:fragment="header">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">SHOP FASHION</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/category">Category</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                </div>
+    <header th:fragment="header" class="header header__bg-transparent shadow " id="header-main"   >
+        <nav class="header-navbar navbar-expand-lg">
+            <div class="header_top">
+                <ul class="nav justify-content-center header_top_ul">
+                    <li class="nav-item">
+                        <a class="nav-link active header_top_a" aria-current="page" href="#">
+                            <i class="ti ti-brand-google-maps"></i>
+                            <span>United States</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link header_top_a" href="#">
+                            <span>English</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link header_top_a" href="/sendMail">
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="nav justify-content-center header_top_ul">
+                    <li class="nav-item">
+                        <a class="nav-link active header_top_a" aria-current="page" href="/login">
+                            <span>Sign In</span>
+                            <i class="ti ti-heartbeat"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link header_top_a" href="#">
+                            <i class="ti ti-shopping-bag"></i>
+                            <span>Bag</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link header_top_a" href="#">
+                            <div id="header-search-one" class="header_to_search">
+                                <i class="ti ti-search"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+          <div class="header-body">
+              <div class="logo">
+                  <a href="/" tabindex="5" class="tab-logo">
+                      Gucci
+                  </a>
+              </div>
+          </div>
+
+            <div class="header-footer">
+                <ul class="nav justify-content-center header_top_ul">
+                    <li class="nav-item">
+                        <a class="nav-link active header_top_a" aria-current="page" href="/sendMail">
+                            <span>
+                                FATHER'S DAY GIFTS
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link header_top_a" href="#">
+                            <span>GIFTS</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link header_top_a" href="/products">
+                             <span>
+                                 WHAT'S NEW
+                             </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link header_top_a" href="#">
+                             <span>
+                                 HANDBAGS
+                             </span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link header_top_a" href="#">
+                             <span>
+                                 WOMEN
+                             </span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link header_top_a" href="#">
+                             <span>
+                                 MEN
+                             </span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link header_top_a" href="#">
+                             <span>
+                                 CHILDREN
+                             </span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </nav>
+        <div class="header-search-wrapper" id="wrapper_search">
+            <div class="header-search">
+                <div class="SearchFormRestyle_header">
+                    <form action="" class="SearchFieldRestyle_form">
+                        <div class="SearchFieldRestyle_inputWrapper">
+                            <i class="ti ti-search"></i>
+                            <input type="text" placeholder="What are you looking for?" class="SearchFieldLegacy_input" name="searchString"/>
+                        </div>
+                    </form>
+                </div>
+              <div class="search-history">
+                  <h6>TRENDING SEARCHES</h6>
+                  <ul class="search-history-ul">
+                      <li>
+                          <i class="ti ti-search icon-size"></i>
+                          <a href="" class="search-history-a">
+                              Handbags
+                          </a>
+                      </li>
+
+                      <li>
+                          <i class="ti ti-search icon-size"></i>
+                          <a href="" class="search-history-a">
+                              Shoes
+                          </a>
+                      </li>
+
+                      <li>
+                          <i class="ti ti-search icon-size"></i>
+                          <a href="" class="search-history-a">
+                              Belts
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+        </div>
     </header>
 
-    <div th:insert="~{::${content}}">
+    <div th:insert="~{::${constant}}">
 
     </div>
 
     <footer th:fragment="footer">
+        <div class="footer_wrapper">
+            <div class="container text-center">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-6">
+                    <div class= "column">
+                        <div>
+                            <div class="footer_title">
+                                Gucci Services
+                            </div>
+                            <ul class="footer-group">
+                                <li class="footer-item">
+                                    <a href="/" class="footer-link footer-link-size">
+                                        <i class="ti ti-gift"></i>
+                                        Discover our services
+                                    </a>
+                                </li>
+
+                                <li class="footer-item">
+                                    <a href="/" class="footer-link footer-link-size">
+                                        <i class="ti ti-sword"></i>
+                                        Gucci Osteria Beverly Hills da Massimo Bottura
+                                    </a>
+                                </li>
+
+                                <li class="footer-item">
+                                    <a href="/" class="footer-link footer-link-size">
+                                        <i class="ti ti-gift-card"></i>
+                                        Book an Appointment
+                                    </a>
+                                </li>
+
+                                <li class="footer-item">
+                                    <a href="/" class="footer-link footer-link-size">
+                                        <i class="ti ti-paw"></i>
+                                        Collect In Store
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div>
+                            <div class="footer_title">
+                                NEED HELP?
+                            </div>
+                            <ul class="footer-group">
+                                <li class="footer-item">
+                                    <a href="/" class="footer-link">Contact Us</a>
+                                </li>
+
+                                <li class="footer-item">
+                                    <a href="/" class="footer-link">Shipping Services</a>
+                                </li>
+
+                                <li class="footer-item">
+                                    <a href="/" class="footer-link">Payment Options</a>
+                                </li>
+
+                                <li class="footer-item">
+                                    <a href="/" class="footer-link">Returns & Exchanges</a>
+                                </li>
+
+                                <li class="footer-item">
+                                    <a href="/" class="footer-link">FAQs</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div>
+                            <div class="footer_title">
+                                THE COMPANY
+                            </div>
+                            <ul class="footer-group">
+                                <li class="footer-item">
+                                    <a href="/" class="footer-link">About Gucci</a>
+                                </li>
+
+                                <li class="footer-item">
+                                    <a href="/" class="footer-link">Gucci Equilibrium</a>
+                                </li>
+
+                                <li class="footer-item">
+                                    <a href="/" class="footer-link">Code of Ethics</a>
+                                </li>
+
+                                <li class="footer-item">
+                                    <a href="/" class="footer-link">Gucci Garden</a>
+                                </li>
+
+                                <li class="footer-item">
+                                    <a href="/" class="footer-link">Careers</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div>
+                            <div class="footer_title">
+                                FIND US ON
+                            </div>
+                            <ul class="footer-group">
+                                <li class="footer-item">
+                                    <a href="/" class="footer-link">
+                                        <i class="ti ti-brand-meta"></i>
+                                        Facebook
+                                    </a>
+                                </li>
+
+                                <li class="footer-item">
+                                    <a href="/" class="footer-link">
+                                        <i class="ti ti-brand-twitter"></i>
+                                        Twitter
+                                    </a>
+                                </li>
+
+                                <li class="footer-item">
+                                    <a href="/" class="footer-link">
+                                        <i class="ti ti-brand-instagram"></i>
+                                        Instagram
+                                    </a>
+                                </li>
+
+                                <li class="footer-item">
+                                    <a href="/" class="footer-link">
+                                        <i class="ti ti-brand-youtube"></i>
+                                        YouTube
+                                    </a>
+                                </li>
+
+                                <li class="footer-item">
+                                    <a href="/" class="footer-link">
+                                        <i class="ti ti-brand-pinterest"></i>
+                                        Pinterest
+                                    </a>
+                                </li>
+
+                                <li class="footer-item">
+                                    <a href="/" class="footer-link">
+                                        <i class="ti ti-brand-snapchat"></i>
+                                        Snapchat
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="side-wrapper">
+                            <div class="side-wrapper-sub">
+                                <article class="form-email ">
+                                    <div class="footer-group-title">
+                                        SIGN UP FOR GUCCI UPDATES
+                                    </div>
+                                    <div class="form-email-contents">
+                                        By entering your email address below, you consent to receiving our newsletter with access to our latest collections, events and initiatives. More details on this are provided in our
+                                        <a href="/" target="_blank" class="privacy-policy-footer">Privacy Policy</a>
+                                        <p class="disclaimer"> </p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script th:src="@{/js/bootstrap.min.js}"></script>
+        <script th:src="@{/js/common.js}"></script>
     </footer>
-
-
 </body>
 </html>

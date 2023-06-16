@@ -36,7 +36,7 @@ public class PayService {
 
     public Pay detailsPay(Long id) {
         Optional<Pay> pay = payRepo.findById(id);
-        if(!pay.isPresent())
+        if(pay.isEmpty())
         {
             throw new EntityNotFoundException("Không tìm thấy phương thức thanh toán này!");
         }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sản Phẩm</title>
+  <th:block th:replace="layout :: link-css "></th:block>
+</head>
+<body>
+<div>
+  <th:block th:replace="layout :: header"></th:block>
+</div>
+
+<div>
+  <picture>
+    <source srcset="https://media.gucci.com/content/HeroRegularStandard_1600x675/1683135029/HeroRegularStandard_Summer-stories-2023-02_001_Default.jpg" type="image/svg+xml">
+    <img src="https://media.gucci.com/content/HeroRegularStandard_1600x675/1683135029/HeroRegularStandard_Summer-stories-2023-02_001_Default.jpg" class="img-fluid img-thumbnails" alt="...">
+  </picture>
+  <div class="giant-look-content-block-2">
+    <h1 class="hero-title-3">Gucci Summer Stories</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="col" th:each="productItem : ${products}">
+      <div class="card h-100 card-wrapper">
+        <img th:src="@{${productItem.image}}" class="card-img-top card-wrapper" alt="....">
+        <button class="card_add">
+          Quick Add
+        </button>
+        <div class="card-body">
+          <div class="card-title">
+            <a href="/" class="card_color">
+              <span th:text="${productItem.productName}"></span>
+            </a>
+          </div>
+          <div class="card_price">
+            <span th:text="${productItem.price}">€</span>
+          </div>
+          <div class="card-promotion">
+            <span th:text="${productItem.description}"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<th:block th:replace="layout :: footer"></th:block>
+</body>
+</html>

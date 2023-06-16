@@ -1,5 +1,5 @@
 package hutech.cmp1024.website_fashion.controller;
-import hutech.cmp1024.website_fashion.entity.Order;
+import hutech.cmp1024.website_fashion.entity.Donhang;
 import hutech.cmp1024.website_fashion.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +17,7 @@ public class OrderController {
     @GetMapping
     public String showAllOrder(Model model)
     {
-        List<Order> orders = orderService.getAllOrder();
+        List<Donhang> orders = orderService.getAllOrder();
         model.addAttribute("orders", orders);
         return "order/list";
     }
@@ -25,11 +25,11 @@ public class OrderController {
     @GetMapping("/add")
     public String addOrderForm(Model model)
     {
-        model.addAttribute("orders", new Order());
+        model.addAttribute("orders", new Donhang());
         return "order/add";
     }
     @PostMapping("/add")
-    public String addOrder(@ModelAttribute("orders") Order order)
+    public String addOrder(@ModelAttribute("orders") Donhang order)
     {
         orderService.addOrder(order);
         return "redirect:/order";
@@ -37,7 +37,7 @@ public class OrderController {
 
     @GetMapping("/edit/{id}")
     public String editOrderForm (@PathVariable("id") Long id, Model model) {
-        Order editOrder = orderService.getOrderById(id);
+        Donhang editOrder = orderService.getOrderById(id);
         if (editOrder != null) {
             model.addAttribute("orders", editOrder);
             return "order/edit";
@@ -47,7 +47,7 @@ public class OrderController {
     }
 
     @PostMapping("/edit")
-    public String editOrder (@ModelAttribute("orders") Order order) {
+    public String editOrder (@ModelAttribute("orders") Donhang order) {
         orderService.updateOrder(order);
         return "redirect:/order";
     }
@@ -60,7 +60,7 @@ public class OrderController {
     }
 
     @GetMapping("/detail/{id}")
-    public Order OrderDetails(@PathVariable Long id) {
+    public Donhang OrderDetails(@PathVariable Long id) {
         return orderService.detailsOrder(id);
     }
 }
