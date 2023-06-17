@@ -43,10 +43,10 @@ public class SecurityConfig {
                         .requestMatchers("/css/**", "/js/**", "/",
                                 "/oauth/**", "/register", "/error")
                         .permitAll()
-                        .requestMatchers("/books/edit/**",
-                                "/books/add", "/books/delete")
+                        .requestMatchers("/products/edit/**",
+                                "/products/add", "/products/delete")
                         .hasAnyAuthority("ADMIN")
-                        .requestMatchers("/books", "/cart", "/cart/**")
+                        .requestMatchers("/products", "/cart", "/cart/**")
                         .hasAnyAuthority("ADMIN", "USER")
                         .anyRequest().authenticated()
                 )

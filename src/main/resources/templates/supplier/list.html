@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www/thymeleaf.org/thymeleaf-extras-springsecurity4"
+      lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Supplier List</title>
+  <th:block th:replace="layout :: link-css"></th:block>
+</head>
+<body>
+<th:block th:replace="layout :: header"></th:block>
+
+<div>
+  <picture>
+    <source srcset="https://media.gucci.com/content/HeroRegularStandard_1600x675/1683135029/HeroRegularStandard_Summer-stories-2023-02_001_Default.jpg" type="image/svg+xml">
+    <img src="https://media.gucci.com/content/HeroRegularStandard_1600x675/1683135029/HeroRegularStandard_Summer-stories-2023-02_001_Default.jpg" class="img-fluid img-thumbnails" alt="...">
+  </picture>
+  <div class="giant-look-content-block-2">
+    <h1 class="hero-title-3">Gucci Summer Stories</h1>
+  </div>
+</div>
+
+<div class="container">
+  <table class="table">
+    <tr>
+      <th>ID</th>
+      <th>Tên Nhà Cung Cấp</th>
+      <th>Địa Chỉ </th>
+      <th>Email</th>
+      <th>Số Điện Thoại</th>
+      <th sec:authorize="hasAnyAuthority('ADMIN')" >Action</th>
+
+
+    </tr>
+    <tr th:each="supplier : ${suppliers}">
+      <td th:text="${supplier.id}"></td>
+      <td th:text="${supplier.suppName}"></td>
+      <td th:text="${supplier.address}"></td>
+      <td th:text="${supplier.email}"></td>
+      <td th:text="${supplier.sdt}" sec:authorize="hasAnyAuthority('ADMIN')"></td><td>
+        <a th:href="@{/suppliers/edit/{id} (id=${supplier.id})}" class="btn btn-primary">Sửa</a>
+        <a th:href="@{/suppliers/delete/{id} (id=${supplier.id})}"
+         onclick="return confirm ('Are you sure?')" class="btn btn-danger">Xóa</a>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<th:block th:replace="layout :: footer"></th:block>
+</body>
+</html>

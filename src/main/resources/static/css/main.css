@@ -183,7 +183,7 @@
 
 
 .navbar-carousel {
-    padding-top: 0;
+    padding: 0 !important;
 }
 
 .carousel-inner-1 {
@@ -620,4 +620,10 @@
 .btn-submit {
     margin-top: 6px;
     float: right;
+}
+
+.card-titles {
+    position: relative;
+    top: -60px;
+    font-size: 44px;
 }
