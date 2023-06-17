@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"> <head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
     <meta charset="UTF-8">
-    <title>Thêm sản phẩm</title>
     <th:block th:replace="layout :: link-css "></th:block>
+    <title>Edit Book</title>
 </head>
 <body>
 <th:block th:replace="layout :: header"></th:block>
@@ -15,14 +16,13 @@
         <h1 class="hero-title-3">Gucci Summer Stories</h1>
     </div>
 </div>
-
 <div class="container">
-    <h1>Thêm sản phẩm</h1>
-    <form th:action="@{/products/add6}" th:object="${products}" method="post">
-        <!--    <div class="col-6 mb-3">-->
-        <!--      <label class="form-label" for="title">Id:</label>-->
-        <!--      <input class="form-control" type="text" th:field="*{id}" id="id">-->
-        <!--    </div>-->
+    <h1>Sửa sản phẩm</h1>
+    <form th:action="@{/products/edit}" th:object="${products}" method="post">
+            <div class="col-6 mb-3">
+              <label class="form-label" for="id">Id:</label>
+              <input class="form-control" type="text" th:field="*{id}" id="id" readonly="readonly">
+            </div>
         <div class="col-6 mb-3">
             <label class="form-label" for="productName">Tên sản phẩm:</label>
             <input class="form-control" type="text" th:field="*{productName}" id="productName">
@@ -53,9 +53,9 @@
             </select>
         </div>
         <div class="col-6 mb-3">
-            <label class="form-label" for="supplier">Chọn nhà cung cấp</label>
+            <label class="form-label" for="supplier">Loại:</label>
             <select class="form-control" id="supplier" name="supplier.id">
-                <option value="">-- Chọn nhà cung cấp--</option>
+                <option value="">-- Chọn loại --</option>
                 <option th:each="supplier : ${suppliers}"
                         th:value="${supplier.id}"
                         th:text="${supplier.suppName}"></option>

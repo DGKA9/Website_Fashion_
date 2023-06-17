@@ -1,10 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <th:block th:replace="layout :: link-css"></th:block>
+    <title>Add Supplier</title>
 </head>
 <body>
+<th:block th:replace="layout :: header"></th:block>
+<div class="container">
 
+    <div>
+        <picture>
+            <source srcset="https://media.gucci.com/content/HeroRegularStandard_1600x675/1683135029/HeroRegularStandard_Summer-stories-2023-02_001_Default.jpg" type="image/svg+xml">
+            <img src="https://media.gucci.com/content/HeroRegularStandard_1600x675/1683135029/HeroRegularStandard_Summer-stories-2023-02_001_Default.jpg" class="img-fluid img-thumbnails" alt="...">
+        </picture>
+        <div class="giant-look-content-block-2">
+            <h1 class="hero-title-3">Gucci Summer Stories</h1>
+        </div>
+    </div>
+    <h1>Add</h1>
+    <form th:action="@{/suppliers/add}" th:object="${suppliers}" method="post">
+
+        <div class="col-6 mb-3">
+            <label class="form-label" for="suppName">Tên Nhà Cung Cấp:</label>
+            <input class="form-control" type="text" th:field="*{suppName}" id="suppName">
+        </div>
+        <div class="col-6 mb-3">
+            <label class="form-label" for="email">Email: </label>
+            <input class="form-control" type="text" th:field="*{email}" id="email">
+        </div>
+        <div class="col-6 mb-3">
+            <label class="form-label" for="sdt">Sđt:</label>
+            <input class="form-control" type="text" th:field="*{sdt}" id="sdt">
+        </div>
+        <div class="col-6 mb-3">
+            <label class="form-label" for="address">Address:</label>
+            <input class="form-control" type="text" th:field="*{address}" id="address">
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Save">
+    </form>
+    <br>
+    <a th:href="@{/suppliers}">Back to List</a>
+</div>
+<th:block th:replace="layout :: footer"></th:block>
 </body>
+
 </html>

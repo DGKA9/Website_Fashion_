@@ -36,7 +36,7 @@ public class CustomerService {
 
     public Customer detailsCustomer(Long id) {
         Optional<Customer> customer = customerRepo.findById(id);
-        if(!customer.isPresent())
+        if(customer.isEmpty())
         {
             throw new EntityNotFoundException("Không tìm thấy khách hàng có id là: " + id);
         }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Mail Form</title>
+  <th:block th:replace="layout :: link-css "></th:block>
+</head>
+<body>
+<div>
+  <th:block th:replace="layout :: header"></th:block>
+</div>
+
+    <div>
+        <picture>
+            <source srcset="https://media.gucci.com/content/HeroRegularStandard_1600x675/1683135029/HeroRegularStandard_Summer-stories-2023-02_001_Default.jpg" type="image/svg+xml">
+            <img src="https://media.gucci.com/content/HeroRegularStandard_1600x675/1683135029/HeroRegularStandard_Summer-stories-2023-02_001_Default.jpg" class="img-fluid img-thumbnails" alt="...">
+        </picture>
+        <div class="giant-look-content-block-2">
+            <h1 class="hero-title-3">Gucci Summer Stories</h1>
+        </div>
+    </div>
+      <div id="contact" class="content-section">
+          <div class="contact-heading">
+            <h2 class="section-heading ">CONTACT</h2>
+            <p class="section-subheading">Fan? Drop a note!</p>
+          </div>
+
+          <div class="row contact-content">
+            <div class="col col-harl s-col-full contact-info">
+              <p><i class="ti-location-pin"></i>TP.Hồ Chí Minh, Việt Nam</p>
+              <p><i class="ti-mobile"></i>Điện thoại: <a href="tel:0816788646">0816788646</a></p>
+              <p><i class="ti-email"></i>Email: <a href="mailto:louree1802@gmail.com">louree1802@gmail.com</a></p>
+            </div>
+            <div class="col col-harl s-col-full contact-from">
+              <form th:action="@{/sendMail}" method="post">
+                <div class="row mt-8">
+                  <div class="col col-full">
+                    <label class="contact-label" for="title">Title</label>
+                    <input type="text" id="title" placeholder="Title" name="title" required class="from-control">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-harl s-col-full">
+                    <label class="contact-label" for="name">Name</label>
+                    <input type="text" name="name" placeholder="Name" required id="name" class="from-control">
+                  </div>
+                 <div class="col col-harl s-col-full s-mt-8">
+                    <label class="contact-label" for="email">Email</label>
+                   <input type="email" name="email" placeholder="Email" required id="email" class="from-control">
+                  </div>
+
+                  <div class="col col-harl s-col-full s-mt-8">
+                    <label class="contact-label" for="phone">Phone</label>
+                    <input type="text" id="phone" placeholder="Phone" name="phone" required class="from-control">
+                  </div>
+                </div>
+
+                <div class="row mt-8">
+                  <div class="col col-full">
+                    <label class="contact-label" for="content">Message</label>
+                    <input type="text" name="content" placeholder="Message" required id="content" class="from-control">
+                  </div>
+                </div>
+                <input class="btn btn-outline-success btn-submit" type="submit" value="SEND">
+              </form>
+            </div>
+        </div>
+      </div>
+<th:block th:replace="layout :: footer"></th:block>
+</body>
+</html>

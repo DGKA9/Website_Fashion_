@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    <th:block th:replace="~{layout :: link-css}"></th:block>
+</head>
+<body>
+<th:block th:replace="~{layout :: header}"></th:block>
+
+<div>
+    <picture>
+        <source srcset="https://media.gucci.com/content/HeroRegularStandard_1600x675/1683135029/HeroRegularStandard_Summer-stories-2023-02_001_Default.jpg" type="image/svg+xml">
+        <img src="https://media.gucci.com/content/HeroRegularStandard_1600x675/1683135029/HeroRegularStandard_Summer-stories-2023-02_001_Default.jpg" class="img-fluid img-thumbnails" alt="...">
+    </picture>
+    <div class="giant-look-content-block-2">
+        <h1 class="hero-title-3">Gucci Summer Stories</h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+            <h3 class="card-title text-center">Sign Up</h3>
+            <form th:action="@{/register}" th:object="${user}" method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">First Name:</label><span class="text-danger">*</span>
+                    <input type="text" class="form-control" th:field="*{name}" id="name">
+                    <span class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" th:field="*{email}" id="email">
+                    <span class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username:</label><span class="text-danger">*</span>
+                    <input type="text" class="form-control" th:field="*{username}" id="username">
+                    <span class="text-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password:</label><span class="text-danger">*</span>
+                    <input type="password" class="form-control" th:field="*{password}" id="password">
+                    <span class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-info">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<th:block th:replace="~{layout :: footer}"></th:block>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <th:block th:replace="~{layout :: link-css}"></th:block>
+</head>
+<body>
+<th:block th:replace="~{layout :: header}"></th:block>
+<div>
+    <picture>
+        <source srcset="https://media.gucci.com/content/HeroRegularStandard_1600x675/1683135029/HeroRegularStandard_Summer-stories-2023-02_001_Default.jpg" type="image/svg+xml">
+        <img src="https://media.gucci.com/content/HeroRegularStandard_1600x675/1683135029/HeroRegularStandard_Summer-stories-2023-02_001_Default.jpg" class="img-fluid img-thumbnails" alt="...">
+    </picture>
+    <div class="giant-look-content-block-2">
+        <h1 class="hero-title-3">Gucci Summer Stories</h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+            <h1 class="card-titles text-center">Login</h1>
+            <form th:action="@{/login}" method="post">
+                <fieldset>
+                    <legend>Please login</legend>
+                    <div th:if="${param.error}" class="alert alert-danger">
+                        Invalid username and password.
+                    </div>
+                    <div th:if="${param.logout}" class="alert alert-success">
+                        You have been logged out.
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username:</label>
+                        <input type="text" required class="form-control" id="username" name="username">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password:</label>
+                            <input type="password" required class="form-control" id="password" name="password">
+                    </div>
+                    <div class="mb-3">
+                        <input type="checkbox" name="remember-me" id="remember-me">
+                        <label for="remember-me">Remember me</label>
+                    </div>
+                    <div class="d-grid gap-2 form-action">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                        <a class="text-primary text-center" href="/register">Don't have accout. Sign up?</a>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+<th:block th:replace="~{layout :: footer}"></th:block>
+</body>
+</html>
